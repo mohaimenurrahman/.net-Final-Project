@@ -46,8 +46,10 @@
   <ItemGroup>
     <Compile Include="BEnt\BuildingModel.cs" />
     <Compile Include="BEnt\ColonyModel.cs" />
+    <Compile Include="BEnt\FlatModel.cs" />
     <Compile Include="BuildingService.cs" />
     <Compile Include="ColonyService.cs" />
+    <Compile Include="FlatService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

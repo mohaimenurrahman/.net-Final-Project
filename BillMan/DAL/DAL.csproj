@@ -74,6 +74,7 @@
     <Compile Include="flat.cs">
       <DependentUpon>BMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="flatRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
