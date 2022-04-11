@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using BLL.BEnt;
+using BEL;
 using DAL;
 
 namespace BLL
@@ -19,14 +19,14 @@ namespace BLL
                 c.CreateMap<building, BuildingModel>();
             });
             var mapper = new Mapper(config);
-            var data = mapper.Map<List<ColonyModel>>(colonyRepo.Get());
+            var data = mapper.Map<List<ColonyModel>>(DataAccessFactory.colonyDataAcees().Get());
             return data;
       
         }
 
         public static List<string> GetNames()
         {
-            var data = colonyRepo.Get().Select(e => e.colonyName).ToList();
+            var data = DataAccessFactory.colonyDataAcees().Get().Select(e => e.colonyName).ToList();
             return data;
         }
 
@@ -39,8 +39,21 @@ namespace BLL
             });
             var mapper = new Mapper(config);
             var data = mapper.Map<colony>(s);
-            colonyRepo.Add(data);
+            DataAccessFactory.colonyDataAcees().Add(data);
         }
+
+        public static void Edit(ColonyModel s)
+        {
+            var data = new Mapper(new MapperConfiguration(cfg => cfg.CreateMap<ColonyModel, colony>())).Map<colony>(s);
+            DataAccessFactory.colonyDataAcees().Edit(data);
+        }
+
+        public static void Delete(int id)
+        {
+            DataAccessFactory.colonyDataAcees().Delete(id);
+        }
+
+        
 
     }
 }

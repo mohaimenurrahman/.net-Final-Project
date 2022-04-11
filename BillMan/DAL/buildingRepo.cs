@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-   public class buildingRepo
+    public class buildingRepo : IRepository<building, int>
     {
         BManEntities db;
         public buildingRepo(BManEntities db)
@@ -17,6 +17,7 @@ namespace DAL
         {
             db.buildings.Add(e);
             db.SaveChanges();
+
         }
 
         public void Delete(int id)
@@ -24,6 +25,7 @@ namespace DAL
             var s = db.buildings.FirstOrDefault(e => e.id == id);
             db.buildings.Remove(s);
             db.SaveChanges();
+
         }
 
         public void Edit(building e)
@@ -31,6 +33,7 @@ namespace DAL
             var s = db.buildings.FirstOrDefault(en => en.id == e.id);
             db.Entry(s).CurrentValues.SetValues(e);
             db.SaveChanges();
+
         }
 
         public List<building> Get()
@@ -42,5 +45,9 @@ namespace DAL
         {
             return db.buildings.FirstOrDefault(e => e.id == id);
         }
+        
+
+
+
     }
 }

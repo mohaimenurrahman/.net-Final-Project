@@ -1,5 +1,5 @@
 ﻿using BLL;
-using BLL.BEnt;
+using BEL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +28,21 @@ namespace BillMan.Controllers
         public void Add(BuildingModel s)
         {
             BuildingService.Add(s);
+        }
+
+        [Route("api/Building/delete/{id}")]
+        [HttpPost]
+        public void Delete(int id)
+        {
+            BuildingService.Delete(id);
+        }
+
+        [Route("api/Building/edit")]
+        [HttpPost]
+
+        public void Edit(BuildingModel e)
+        {
+            BuildingService.Edit(e);
         }
     }
 }

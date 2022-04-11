@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using BLL.BEnt;
+using BEL;
 using DAL;
 using System;
 using System.Collections.Generic;
@@ -15,18 +15,20 @@ namespace BLL
         {
             var config = new MapperConfiguration(c =>
             {
+                c.CreateMap<colony, ColonyModel>();
                 c.CreateMap<building, BuildingModel>();
                 c.CreateMap<flat, FlatModel>();
             });
             var mapper = new Mapper(config);
-            var data = mapper.Map<List<FlatModel>>(flatRepo.Get());
+            var data = mapper.Map<List<FlatModel>>(DataAccessFactory.flatDataAccess().Get());
             return data;
 
         }
 
         public static List<string> GetNames()
         {
-            var data = flatRepo.Get().Select(e => e.flatRenterName).ToList();
+            var data = DataAccessFactory.flatDataAccess().Get().Select(e => e.flatRenterName).ToList();
+            //var data = DataAccessFactory.flatDataAccess().Get().Select(e => e.flatNumber).ToList();
             return data;
         }
 
@@ -39,7 +41,18 @@ namespace BLL
             });
             var mapper = new Mapper(config);
             var data = mapper.Map<flat>(s);
-            flatRepo.Add(data);
+            DataAccessFactory.flatDataAccess().Add(data);
+        }
+
+        public static void Edit(FlatModel s)
+        {
+            var data = new Mapper(new MapperConfiguration(cfg => cfg.CreateMap<FlatModel, flat>())).Map<flat>(s);
+            DataAccessFactory.flatDataAccess().Edit(data);
+        }
+
+        public static void Delete(int id)
+        {
+            DataAccessFactory.flatDataAccess().Delete(id);
         }
     }
 }

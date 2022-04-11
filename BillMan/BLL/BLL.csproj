@@ -44,15 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BEnt\BuildingModel.cs" />
-    <Compile Include="BEnt\ColonyModel.cs" />
-    <Compile Include="BEnt\FlatModel.cs" />
     <Compile Include="BuildingService.cs" />
     <Compile Include="ColonyService.cs" />
     <Compile Include="FlatService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BEL\BEL.csproj">
+      <Project>{70c9367c-e895-43b9-b671-63cefe7f8b38}</Project>
+      <Name>BEL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{c057c0d5-5bab-41d6-8260-41745d8c688c}</Project>
       <Name>DAL</Name>

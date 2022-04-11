@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BManModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="building">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="buildingCode" Type="Int32" Nullable="false" />
+    <Property Name="buildingName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="totalFloors" Type="Int32" Nullable="false" />
+    <Property Name="totalFlats" Type="Int32" Nullable="false" />
+    <Property Name="ownerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="colonyCode" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="flats" Relationship="Self.FK_flats_buildings" FromRole="buildings" ToRole="flats" />
+  </EntityType>
+  <EntityType Name="colony">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="colonyCode" Type="Int32" Nullable="false" />
+    <Property Name="colonyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="buildingCode" Type="Int32" Nullable="false" />
+    <Property Name="buildingName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="flats" Relationship="Self.FK_flats_colonys" FromRole="colonys" ToRole="flats" />
+  </EntityType>
+  <EntityType Name="flat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="colonyCode" Type="Int32" Nullable="false" />
+    <Property Name="buildingCode" Type="Int32" Nullable="false" />
+    <Property Name="buildingName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="floorDetail" Type="Int32" Nullable="false" />
+    <Property Name="flatNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="flatSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="flatRenterName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="month" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="flatRent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wasaBill" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="currentBill" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="colonyId" Type="Int32" Nullable="false" />
+    <Property Name="buildingId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="building" Relationship="Self.FK_flats_buildings" FromRole="flats" ToRole="buildings" />
+    <NavigationProperty Name="colony" Relationship="Self.FK_flats_colonys" FromRole="flats" ToRole="colonys" />
+  </EntityType>
+  <Association Name="FK_flats_buildings">
+    <End Role="buildings" Type="Self.building" Multiplicity="1" />
+    <End Role="flats" Type="Self.flat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="buildings">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="flats">
+        <PropertyRef Name="buildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_flats_colonys">
+    <End Role="colonys" Type="Self.colony" Multiplicity="1" />
+    <End Role="flats" Type="Self.flat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="colonys">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="flats">
+        <PropertyRef Name="colonyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BManEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="buildings" EntityType="Self.building" />
+    <EntitySet Name="colonys" EntityType="Self.colony" />
+    <EntitySet Name="flats" EntityType="Self.flat" />
+    <AssociationSet Name="FK_flats_buildings" Association="Self.FK_flats_buildings">
+      <End Role="buildings" EntitySet="buildings" />
+      <End Role="flats" EntitySet="flats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_flats_colonys" Association="Self.FK_flats_colonys">
+      <End Role="colonys" EntitySet="colonys" />
+      <End Role="flats" EntitySet="flats" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -107,6 +107,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BEL\BEL.csproj">
+      <Project>{70c9367c-e895-43b9-b671-63cefe7f8b38}</Project>
+      <Name>BEL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{3d98cb6e-af9e-4af2-9c57-21e469d3dfcd}</Project>
       <Name>BLL</Name>

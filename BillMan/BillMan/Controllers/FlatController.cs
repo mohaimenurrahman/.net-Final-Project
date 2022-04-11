@@ -1,5 +1,5 @@
 ﻿using BLL;
-using BLL.BEnt;
+using BEL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ namespace BillMan.Controllers
 {
     public class FlatController : ApiController
     {
-        [Route("api/Flat/FlatRenterNames")]
+        [Route("api/Flat/Names")]
         [HttpGet]
         public List<string> GetNames()
         {
@@ -28,6 +28,21 @@ namespace BillMan.Controllers
         public void Add(FlatModel s)
         {
             FlatService.Add(s);
+        }
+
+        [Route("api/Flat/delete/{id}")]
+        [HttpPost]
+        public void Delete(int id)
+        {
+            FlatService.Delete(id);
+        }
+
+        [Route("api/Flat/edit")]
+        [HttpPost]
+
+        public void Edit(FlatModel e)
+        {
+            FlatService.Edit(e);
         }
     }
 }

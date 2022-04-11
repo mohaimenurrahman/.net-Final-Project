@@ -1,5 +1,5 @@
 ﻿using BLL;
-using BLL.BEnt;
+using BEL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +28,21 @@ namespace BillMan.Controllers
         public void Add(ColonyModel s)
         {
             ColonyService.Add(s);
+        }
+
+        [Route("api/Colony/delete/{id}")]
+        [HttpPost]
+        public void Delete(int id)
+        {
+            ColonyService.Delete(id);
+        }
+
+        [Route("api/Colony/edit")]
+        [HttpPost]
+
+        public void Edit(ColonyModel e)
+        {
+            ColonyService.Edit(e);
         }
     }
 }
