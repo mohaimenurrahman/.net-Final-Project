@@ -24,14 +24,14 @@ namespace BillMan.Controllers
             return ColonyService.Get();
         }
         [Route("api/Colony/Create")]
-        [HttpPost]
+        [HttpPut]
         public void Add(ColonyModel s)
         {
             ColonyService.Add(s);
         }
 
         [Route("api/Colony/delete/{id}")]
-        [HttpPost]
+        [HttpDelete]
         public void Delete(int id)
         {
             ColonyService.Delete(id);

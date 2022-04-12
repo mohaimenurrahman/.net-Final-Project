@@ -24,14 +24,14 @@ namespace BillMan.Controllers
             return FlatService.Get();
         }
         [Route("api/Flat/Create")]
-        [HttpPost]
+        [HttpPut]
         public void Add(FlatModel s)
         {
             FlatService.Add(s);
         }
 
         [Route("api/Flat/delete/{id}")]
-        [HttpPost]
+        [HttpDelete]
         public void Delete(int id)
         {
             FlatService.Delete(id);

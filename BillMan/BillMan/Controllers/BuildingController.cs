@@ -24,14 +24,14 @@ namespace BillMan.Controllers
             return BuildingService.Get();
         }
         [Route("api/Building/Create")]
-        [HttpPost]
+        [HttpPut]
         public void Add(BuildingModel s)
         {
             BuildingService.Add(s);
         }
 
         [Route("api/Building/delete/{id}")]
-        [HttpPost]
+        [HttpDelete]
         public void Delete(int id)
         {
             BuildingService.Delete(id);
