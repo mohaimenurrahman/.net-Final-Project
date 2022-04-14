@@ -17,6 +17,11 @@ namespace DAL
         public building()
         {
             this.flats = new HashSet<flat>();
+            this.currentBills = new HashSet<currentBill>();
+            this.flatNumbers = new HashSet<flatNumber>();
+            this.flatRents = new HashSet<flatRent>();
+            this.wasaBills = new HashSet<wasaBill>();
+            this.subUsers = new HashSet<subUser>();
         }
     
         public int id { get; set; }
@@ -29,5 +34,10 @@ namespace DAL
         public string username { get; set; }
     
         public virtual ICollection<flat> flats { get; set; }
+        public virtual ICollection<currentBill> currentBills { get; set; }
+        public virtual ICollection<flatNumber> flatNumbers { get; set; }
+        public virtual ICollection<flatRent> flatRents { get; set; }
+        public virtual ICollection<wasaBill> wasaBills { get; set; }
+        public virtual ICollection<subUser> subUsers { get; set; }
     }
 }

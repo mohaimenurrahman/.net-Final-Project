@@ -28,5 +28,14 @@ namespace DAL
         public DbSet<building> buildings { get; set; }
         public DbSet<colony> colonys { get; set; }
         public DbSet<flat> flats { get; set; }
+        public DbSet<currentBill> currentBills { get; set; }
+        public DbSet<flatNumber> flatNumbers { get; set; }
+        public DbSet<flatRent> flatRents { get; set; }
+        public DbSet<wasaBill> wasaBills { get; set; }
+        public DbSet<employee> employees { get; set; }
+        public DbSet<login> logins { get; set; }
+        public DbSet<subcription> subcriptions { get; set; }
+        public DbSet<subUser> subUsers { get; set; }
+        public DbSet<user> users { get; set; }
     }
 }

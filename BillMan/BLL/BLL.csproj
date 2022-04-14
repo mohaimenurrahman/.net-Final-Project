@@ -45,9 +45,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuildingService.cs" />
+    <Compile Include="CBService.cs" />
     <Compile Include="ColonyService.cs" />
+    <Compile Include="EService.cs" />
     <Compile Include="FlatService.cs" />
+    <Compile Include="FNumberService.cs" />
+    <Compile Include="FRService.cs" />
+    <Compile Include="LService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="subService.cs" />
+    <Compile Include="SUService.cs" />
+    <Compile Include="userService.cs" />
+    <Compile Include="WBService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BEL\BEL.csproj">

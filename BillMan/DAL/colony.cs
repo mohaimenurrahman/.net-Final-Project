@@ -17,6 +17,7 @@ namespace DAL
         public colony()
         {
             this.flats = new HashSet<flat>();
+            this.subUsers = new HashSet<subUser>();
         }
     
         public int id { get; set; }
@@ -27,5 +28,6 @@ namespace DAL
         public string username { get; set; }
     
         public virtual ICollection<flat> flats { get; set; }
+        public virtual ICollection<subUser> subUsers { get; set; }
     }
 }
