@@ -1,0 +1,16 @@
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\bin\Debug\BLL.dll
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\bin\Debug\BLL.pdb
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\bin\Debug\AutoMapper.dll
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\bin\Debug\DAL.dll
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\bin\Debug\EntityFramework.dll
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\bin\Debug\DAL.pdb
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\bin\Debug\DAL.dll.config
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\bin\Debug\AutoMapper.xml
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\bin\Debug\EntityFramework.xml
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\obj\Debug\BLL.csproj.CopyComplete
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\obj\Debug\BLL.dll
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\obj\Debug\BLL.pdb
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\bin\Debug\BEL.dll
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BLL\bin\Debug\BEL.pdb

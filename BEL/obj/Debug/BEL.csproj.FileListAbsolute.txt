@@ -1,0 +1,6 @@
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BEL\bin\Debug\BEL.dll
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BEL\bin\Debug\BEL.pdb
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BEL\obj\Debug\BEL.csproj.AssemblyReference.cache
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BEL\obj\Debug\BEL.csproj.CoreCompileInputs.cache
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BEL\obj\Debug\BEL.dll
+E:\Advance Dot Net all Class Task & Practice\mfinalproject\BillMan\BEL\obj\Debug\BEL.pdb
